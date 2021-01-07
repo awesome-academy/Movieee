@@ -5,8 +5,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let _ = (scene as? UIWindowScene) else { return }
+        if let rootVC = self.window?.rootViewController {
+            let status = UserDefaults.standard.bool(forKey: KeyUserDefault.keyCheckNewUser)
+            if status {
+                guard let mainVC = rootVC.storyboard?.instantiateViewController(withIdentifier: IdStoryboardView.mainVC)
+                else { return }
+                self.window?.rootViewController = mainVC
+            }
+        }
     }
     
 }
-

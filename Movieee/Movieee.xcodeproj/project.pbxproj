@@ -25,6 +25,7 @@
 		E470C83B25A5A2960096D9B7 /* APIKeyMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E470C83A25A5A2960096D9B7 /* APIKeyMovie.swift */; };
 		E470C84125A5A58A0096D9B7 /* MovieSearchByPersonName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E470C84025A5A58A0096D9B7 /* MovieSearchByPersonName.swift */; };
 		E470C84825A5BF6B0096D9B7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E470C84725A5BF6B0096D9B7 /* Constants.swift */; };
+		E470C85125A6DADF0096D9B7 /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E470C85025A6DADF0096D9B7 /* WelcomeScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		E470C83A25A5A2960096D9B7 /* APIKeyMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeyMovie.swift; sourceTree = "<group>"; };
 		E470C84025A5A58A0096D9B7 /* MovieSearchByPersonName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchByPersonName.swift; sourceTree = "<group>"; };
 		E470C84725A5BF6B0096D9B7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E470C85025A6DADF0096D9B7 /* WelcomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		E40EDA9625A40E6C00AD34A1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E470C85025A6DADF0096D9B7 /* WelcomeScreenViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				E470C84825A5BF6B0096D9B7 /* Constants.swift in Sources */,
 				E470C82B25A5A2460096D9B7 /* PersonDetail.swift in Sources */,
 				E470C82D25A5A2460096D9B7 /* MovieDetail.swift in Sources */,
+				E470C85125A6DADF0096D9B7 /* WelcomeScreenViewController.swift in Sources */,
 				E470C82725A5A2460096D9B7 /* PersonDetailKnownFor.swift in Sources */,
 				E470C83625A5A2690096D9B7 /* UrlAPIMovie.swift in Sources */,
 				E470C82A25A5A2460096D9B7 /* MovieTrailer.swift in Sources */,
