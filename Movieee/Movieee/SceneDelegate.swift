@@ -6,9 +6,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let rootVC = self.window?.rootViewController {
-            let status = UserDefaults.standard.bool(forKey: KeyUserDefault.keyCheckNewUser.rawValue)
+            let status = UserDefaults.standard.bool(forKey: KeyUserDefault.keyCheckNewUser)
             if status {
-                guard let mainVC = rootVC.storyboard?.instantiateViewController(withIdentifier: IdStoryboardView.mainVC.rawValue)
+                guard let mainVC = rootVC.storyboard?.instantiateViewController(withIdentifier: IdStoryboardView.mainVC)
                 else { return }
                 self.window?.rootViewController = mainVC
             }

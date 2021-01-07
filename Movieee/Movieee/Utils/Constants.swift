@@ -1,9 +1,9 @@
 import Foundation
 
-enum KeyUserDefault: String {
-    case keyCheckNewUser = "hasLaunched"
+enum KeyUserDefault {
+    static let keyCheckNewUser = "hasLaunched"
 }
 
-enum IdStoryboardView: String {
-    case mainVC = "MainViewController"
+enum IdStoryboardView {
+    static let mainVC = "MainViewController"
 }
