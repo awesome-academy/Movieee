@@ -1,9 +1,9 @@
 import Foundation
 
-final class KeyUserDefault {
-    static let keyCheckNewUser = "hasLaunched"
+enum KeyUserDefault: String {
+    case keyCheckNewUser = "hasLaunched"
 }
 
-final class IdStoryboardView {
-    static let mainVC = "MainViewController"
+enum IdStoryboardView: String {
+    case mainVC = "MainViewController"
 }
