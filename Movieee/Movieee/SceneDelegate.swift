@@ -5,12 +5,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        if let rvc = self.window?.rootViewController {
-            let ud = UserDefaults.standard
-            if ud.bool(forKey: "hasLaunched") == true {
-                print("Not the first time")
-                let vc = rvc.storyboard!.instantiateViewController(withIdentifier: "TabbarViewController")
-                self.window!.rootViewController = vc
+        if let rootVC = self.window?.rootViewController {
+            let status = UserDefaults.standard.bool(forKey: KeyUserDefault.keyCheckNewUser)
+            if status {
+                guard let mainVC = rootVC.storyboard?.instantiateViewController(withIdentifier: IdStoryboardView.mainVC)
+                else { return }
+                self.window?.rootViewController = mainVC
             }
         }
     }
