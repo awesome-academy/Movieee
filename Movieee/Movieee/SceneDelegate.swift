@@ -8,7 +8,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let rootVC = self.window?.rootViewController {
             let status = UserDefaults.standard.bool(forKey: KeyUserDefault.keyCheckNewUser)
             if status {
-                guard let mainVC = rootVC.storyboard?.instantiateViewController(withIdentifier: IdStoryboardView.mainVC)
+                guard let mainVC = rootVC.storyboard?.instantiateViewController(withIdentifier: IdViewController.main)
                 else { return }
                 self.window?.rootViewController = mainVC
             }
