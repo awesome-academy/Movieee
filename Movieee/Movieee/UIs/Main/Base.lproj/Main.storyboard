@@ -67,6 +67,9 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
+                    <connections>
+                        <segue destination="VDE-t4-yqb" kind="relationship" relationship="rootViewController" id="eWZ-ia-Ap0"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hI6-nG-3SR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,12 +95,22 @@
         <!--HomeScreen-->
         <scene sceneID="54D-t9-8gu">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="HomeScreenViewController" storyboardName="HomeScreen" id="EUq-Yp-UCR" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="HomeViewController" storyboardName="HomeScreen" id="EUq-Yp-UCR" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ah6-Ed-Vd5"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4b-f4-hbW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-894" y="1191"/>
+        </scene>
+        <!--CategoryScreen-->
+        <scene sceneID="h1Q-JG-Tim">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="CategoryViewController" storyboardName="CategoryScreen" id="VDE-t4-yqb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Y6V-Wh-el8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L3R-yY-tC6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-62" y="1191"/>
         </scene>
     </scenes>
     <resources>

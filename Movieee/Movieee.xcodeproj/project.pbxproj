@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E405006A25B149FC00D5C50D /* CategoryScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E405006925B149FC00D5C50D /* CategoryScreen.storyboard */; };
+		E405006D25B14A6400D5C50D /* CategoryScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E405006C25B14A6400D5C50D /* CategoryScreenViewController.swift */; };
+		E405007225B14B4000D5C50D /* CategoryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E405007125B14B4000D5C50D /* CategoryTableCell.swift */; };
 		E40EDA7B25A3F69E00AD34A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EDA7A25A3F69E00AD34A1 /* AppDelegate.swift */; };
 		E40EDA7D25A3F69E00AD34A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EDA7C25A3F69E00AD34A1 /* SceneDelegate.swift */; };
 		E40EDA8225A3F69E00AD34A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E40EDA8025A3F69E00AD34A1 /* Main.storyboard */; };
@@ -36,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E405006925B149FC00D5C50D /* CategoryScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryScreen.storyboard; sourceTree = "<group>"; };
+		E405006C25B14A6400D5C50D /* CategoryScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreenViewController.swift; sourceTree = "<group>"; };
+		E405007125B14B4000D5C50D /* CategoryTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableCell.swift; sourceTree = "<group>"; };
 		E40EDA7725A3F69E00AD34A1 /* Movieee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movieee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E40EDA7A25A3F69E00AD34A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E40EDA7C25A3F69E00AD34A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +83,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E405006825B149BE00D5C50D /* Category Screen */ = {
+			isa = PBXGroup;
+			children = (
+				E405006F25B14A6C00D5C50D /* Cell */,
+				E405006925B149FC00D5C50D /* CategoryScreen.storyboard */,
+				E405006C25B14A6400D5C50D /* CategoryScreenViewController.swift */,
+			);
+			path = "Category Screen";
+			sourceTree = "<group>";
+		};
+		E405006F25B14A6C00D5C50D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E405007125B14B4000D5C50D /* CategoryTableCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		E40EDA6E25A3F69E00AD34A1 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +156,7 @@
 				E42D38B825A7F9EE0083616B /* Welcome Screen */,
 				E42D38B725A7F9D40083616B /* Main */,
 				E42D38B925A7F9FD0083616B /* Home Screen */,
+				E405006825B149BE00D5C50D /* Category Screen */,
 			);
 			path = UIs;
 			sourceTree = "<group>";
@@ -264,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E405006A25B149FC00D5C50D /* CategoryScreen.storyboard in Resources */,
 				E40EDA8725A3F6A000AD34A1 /* LaunchScreen.storyboard in Resources */,
 				E42D38BF25A802050083616B /* WelcomeScreen.storyboard in Resources */,
 				E42D38C325A803170083616B /* HomeScreen.storyboard in Resources */,
@@ -279,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E405007225B14B4000D5C50D /* CategoryTableCell.swift in Sources */,
 				E470C82925A5A2460096D9B7 /* MovieDetailCredits.swift in Sources */,
 				E470C82C25A5A2460096D9B7 /* MovieListByCategory.swift in Sources */,
 				E470C84825A5BF6B0096D9B7 /* Constants.swift in Sources */,
@@ -287,6 +314,7 @@
 				E470C82D25A5A2460096D9B7 /* MovieDetail.swift in Sources */,
 				E42D38B425A7ED450083616B /* HomeScreenViewController.swift in Sources */,
 				E43C9C9825AB08FB00E2D424 /* HomeScreenMovieListCell.swift in Sources */,
+				E405006D25B14A6400D5C50D /* CategoryScreenViewController.swift in Sources */,
 				E470C85125A6DADF0096D9B7 /* WelcomeScreenViewController.swift in Sources */,
 				E46FF36F25AFF34D0082C51E /* UIView+.swift in Sources */,
 				E42D38D425A8105C0083616B /* HomeScreenCategoryCell.swift in Sources */,
