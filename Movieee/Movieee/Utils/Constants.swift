@@ -4,6 +4,19 @@ enum KeyUserDefault {
     static let keyCheckNewUser = "hasLaunched"
 }
 
-enum IdStoryboardView {
-    static let mainVC = "MainViewController"
+enum IdViewController {
+    static let main = "MainViewController"
+    static let home = "HomeViewController"
+}
+
+enum IdStoryboard {
+    static let home = "HomeScreen"
+}
+
+enum ColorName {
+    static let backgroundColorName = "BackgroundColor"
+}
+
+enum FontName {
+    static let HelveticaNeueBoldName = "HelveticaNeue-Bold"
 }

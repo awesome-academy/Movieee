@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aP3-d5-nzI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Welcome Screen View Controller-->
+        <scene sceneID="cyS-WA-iBm">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeScreenViewController" id="aP3-d5-nzI" customClass="WelcomeScreenViewController" customModule="Movieee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JWY-P2-DQH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WelcomeScreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ChP-fX-IZc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOVIEEE" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxC-B5-a0f">
+                                <rect key="frame" x="134" y="589" width="146" height="38.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="797-Wo-Oep">
+                                <rect key="frame" x="57" y="747.5" width="300" height="62"/>
+                                <color key="backgroundColor" red="0.40078881379999998" green="0.2651486099" blue="0.7203425765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="8f1-5W-pIK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                <state key="normal" title="GET STARTED">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="getStartedButton:" destination="aP3-d5-nzI" eventType="touchUpInside" id="j6F-se-iQa"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="hGB-Kh-yIM">
+                                <rect key="frame" x="57" y="323" width="300" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="nDm-RN-ZK7"/>
+                                    <constraint firstAttribute="width" constant="300" id="zRZ-TC-8Wz"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="y3d-Yi-gKh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ChP-fX-IZc" firstAttribute="leading" secondItem="JWY-P2-DQH" secondAttribute="leading" id="6Wa-ol-8Hu"/>
+                            <constraint firstAttribute="trailing" secondItem="ChP-fX-IZc" secondAttribute="trailing" id="IT2-K9-I6Q"/>
+                            <constraint firstItem="797-Wo-Oep" firstAttribute="leading" secondItem="y3d-Yi-gKh" secondAttribute="leading" constant="57" id="Mia-9u-jxv"/>
+                            <constraint firstItem="qxC-B5-a0f" firstAttribute="centerX" secondItem="JWY-P2-DQH" secondAttribute="centerX" id="OcU-2L-10w"/>
+                            <constraint firstAttribute="bottom" secondItem="ChP-fX-IZc" secondAttribute="bottom" id="RBS-2W-3v4"/>
+                            <constraint firstItem="y3d-Yi-gKh" firstAttribute="trailing" secondItem="797-Wo-Oep" secondAttribute="trailing" constant="57" id="T9M-wO-JIx"/>
+                            <constraint firstItem="hGB-Kh-yIM" firstAttribute="centerY" secondItem="JWY-P2-DQH" secondAttribute="centerY" id="W9P-ua-NGU"/>
+                            <constraint firstItem="797-Wo-Oep" firstAttribute="top" secondItem="qxC-B5-a0f" secondAttribute="bottom" constant="120" id="fOP-6f-foT"/>
+                            <constraint firstItem="hGB-Kh-yIM" firstAttribute="centerX" secondItem="JWY-P2-DQH" secondAttribute="centerX" id="fgV-lR-rgg"/>
+                            <constraint firstItem="ChP-fX-IZc" firstAttribute="top" secondItem="JWY-P2-DQH" secondAttribute="top" id="meB-l0-bRG"/>
+                            <constraint firstItem="qxC-B5-a0f" firstAttribute="top" secondItem="hGB-Kh-yIM" secondAttribute="bottom" constant="16" id="vNj-OB-ocH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="getStartedButton" destination="797-Wo-Oep" id="SKU-qB-JSW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LGe-Is-0gQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-875.36231884057975" y="21.428571428571427"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="250" height="214"/>
+        <image name="WelcomeScreenBackground" width="434" height="946"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
