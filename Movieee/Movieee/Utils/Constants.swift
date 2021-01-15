@@ -7,6 +7,7 @@ enum KeyUserDefault {
 enum IdViewController {
     static let main = "MainViewController"
     static let home = "HomeViewController"
+    static let category = "CategoryViewController"
 }
 
 enum IdStoryboard {
