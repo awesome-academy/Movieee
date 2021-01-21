@@ -30,7 +30,11 @@ final class HomeScreenViewController: UIViewController {
     @IBOutlet weak private var homeScreenTableView: UITableView!
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
-        //navigation to Search Screen
+        let searchStoryboard = UIStoryboard(name: IdStoryboard.search, bundle: nil)
+        guard let searchVC = searchStoryboard.instantiateViewController(
+                withIdentifier: IdViewController.search)
+                as? SearchScreenViewController else { return }
+        self.navigationController?.pushViewController(searchVC, animated: true)
     }
     
     private var data = [HomeConstraints.KindOfCategory: [CategoryResults]]()
@@ -56,7 +60,7 @@ final class HomeScreenViewController: UIViewController {
     private func configHomeScreen(category: HomeConstraints.KindOfCategory) {
         dispatchGroup.enter()
         APIMovie.apiMovie.getMovieFromCategory(from: category.rawValue) { [unowned self] result in
-            DispatchQueue.main.async {
+            if let result = result {
                 data[category] = result.results
                 dispatchGroup.leave()
             }
