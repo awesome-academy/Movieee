@@ -22,19 +22,19 @@ final class APIMovie {
         }.resume()
     }
     
-    func getMovieFromGenre(from Genre: String,
+    func getMovieFromGenre(from genre: String,
                            getListMovieFromGenre: @escaping ((MovieListByGenre)?) -> Void) {
         let urlString = UrlAPIMovie.urlMovieByGenre
             + APIKeyMovie.APIKey
-            + "&with_genres=\(Genre)"
+            + "&with_genres=\(genre)"
         getDataToAPIMovie(from: urlString,
                           completion: getListMovieFromGenre)
     }
     
-    func getMovieFromCategory(from Category: String,
+    func getMovieFromCategory(from category: String,
                               getListMovieFromCategory: @escaping ((MovieListByCategory)?) -> Void) {
         let urlString = UrlAPIMovie.urlMovie
-            + Category
+            + category
             + APIKeyMovie.APIKey
         getDataToAPIMovie(from: urlString,
                           completion: getListMovieFromCategory)
@@ -61,7 +61,7 @@ final class APIMovie {
         getDataToAPIMovie(from: urlString,
                           completion: getListMovieFromSearch)
     }
-    //
+    
     func getMovieDetail(movieId: String,
                         getMovieInDetail: @escaping ((MovieDetail)?) -> Void) {
         let urlString = UrlAPIMovie.urlMovie
@@ -110,4 +110,10 @@ final class APIMovie {
                           completion: getPersonInDetailKnownFor)
     }
     
+    func getGenreList(getGenre: @escaping ((GenreList)?) -> Void) {
+        let urlString = UrlAPIMovie.urlGenreList
+            + APIKeyMovie.APIKey
+        getDataToAPIMovie(from: urlString,
+                          completion: getGenre)
+    }
 }

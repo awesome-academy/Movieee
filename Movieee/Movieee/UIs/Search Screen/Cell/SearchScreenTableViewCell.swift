@@ -1,11 +1,7 @@
 import UIKit
 class SearchScreenTableViewCell: UITableViewCell {
     
-    @IBOutlet private weak var star1: UIImageView!
-    @IBOutlet private weak var star2: UIImageView!
-    @IBOutlet private weak var star3: UIImageView!
-    @IBOutlet private weak var star4: UIImageView!
-    @IBOutlet private weak var star5: UIImageView!
+    @IBOutlet private var ratingStars: [UIImageView]!
     @IBOutlet private weak var voteRate: UILabel!
     
     @IBOutlet private weak var genreCollectionView: UICollectionView!
@@ -27,9 +23,8 @@ class SearchScreenTableViewCell: UITableViewCell {
     func configStarBar(rate: Double) {
         voteRate.text = "\(rate)"
         let numStar = Int(rate / 2)
-        let stars = [star1, star2, star3, star4, star5]
-        for index in 0..<stars.count {
-            stars[index]?.tintColor = index < numStar ? .systemYellow : .lightGray
+        for index in 0..<ratingStars.count {
+            ratingStars[index].tintColor = index < numStar ? .systemYellow : .lightGray
         }
     }
     

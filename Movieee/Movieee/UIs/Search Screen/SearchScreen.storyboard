@@ -150,7 +150,7 @@
                                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             </collectionViewFlowLayout>
                                                             <cells>
-                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieGenreCell" id="bDh-Oj-laF" customClass="SearchScreenGenreCell" customModule="Movieee" customModuleProvider="target">
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieGenreCell" id="bDh-Oj-laF" customClass="GenreCollectionCell" customModule="Movieee" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="20"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jTz-2x-PFz">
@@ -233,6 +233,11 @@
                                                         <constraint firstItem="he4-xg-MDJ" firstAttribute="leading" secondItem="23J-p8-wsh" secondAttribute="leading" id="sE2-ly-Hq8"/>
                                                         <constraint firstAttribute="trailing" secondItem="23J-p8-wsh" secondAttribute="trailing" constant="16" id="w4l-aU-0kY"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -246,12 +251,12 @@
                                             <outlet property="filmNameLabel" destination="23J-p8-wsh" id="kOp-kR-PXK"/>
                                             <outlet property="genreCollectionView" destination="HSe-o3-q43" id="UCI-GM-ED5"/>
                                             <outlet property="posterImageView" destination="ChE-R9-Su7" id="yE4-cn-pWo"/>
-                                            <outlet property="star1" destination="wjm-Ox-bfS" id="qh9-8o-tu8"/>
-                                            <outlet property="star2" destination="N0a-BR-qWj" id="dw6-zR-UIB"/>
-                                            <outlet property="star3" destination="6je-0I-nLM" id="28t-wd-cVl"/>
-                                            <outlet property="star4" destination="3FS-lj-VpK" id="dpc-yU-Ki5"/>
-                                            <outlet property="star5" destination="D75-GW-0ZF" id="9Ll-7K-O9K"/>
                                             <outlet property="voteRate" destination="aoW-nz-IG2" id="K59-4r-rEO"/>
+                                            <outletCollection property="ratingStars" destination="wjm-Ox-bfS" collectionClass="NSMutableArray" id="hJQ-Qa-L2f"/>
+                                            <outletCollection property="ratingStars" destination="N0a-BR-qWj" collectionClass="NSMutableArray" id="ScU-Cw-bxT"/>
+                                            <outletCollection property="ratingStars" destination="6je-0I-nLM" collectionClass="NSMutableArray" id="UC3-BL-8Ty"/>
+                                            <outletCollection property="ratingStars" destination="3FS-lj-VpK" collectionClass="NSMutableArray" id="kA0-go-Nje"/>
+                                            <outletCollection property="ratingStars" destination="D75-GW-0ZF" collectionClass="NSMutableArray" id="zp3-Nz-kRh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

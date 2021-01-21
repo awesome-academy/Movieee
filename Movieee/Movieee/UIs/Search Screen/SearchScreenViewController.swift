@@ -13,17 +13,26 @@ enum SearchType {
 
 class SearchScreenViewController: UIViewController {
     
-    @IBOutlet weak var notFoundView: UIView!
-    @IBOutlet weak var listFilmTableView: UITableView!
-    @IBOutlet weak var searchField: UITextField!
-    @IBOutlet weak var movieNameLabel: UIButton!
-    @IBOutlet weak var personNameLabel: UIButton!
+    @IBOutlet private weak var notFoundView: UIView!
+    @IBOutlet private weak var listFilmTableView: UITableView!
+    @IBOutlet private weak var searchField: UITextField!
+    @IBOutlet private weak var movieNameLabel: UIButton!
+    @IBOutlet private weak var personNameLabel: UIButton!
     
     var searchType = SearchType.movieName
-    var listFilmByMovieName = [MovieSearchResults]()
-    var knownForPersonSearch = [PersonSearchResult]()
+    var listFilmByMovieName = [MovieSearchResults]() {
+        didSet {
+            listFilmTableView.reloadData()
+        }
+    }
+    var knownForPersonSearch = [PersonSearchResult]() {
+        didSet {
+            listFilmTableView.reloadData()
+        }
+    }
     var listFilmByPersonName = [MovieKnownForInPersonSearch]()
     var idForMovieDetail = 0
+    var listGenres = [ListNameOfGenre]()
     private var storedOffsets = [Int: CGFloat]()
     
     override func viewDidLoad() {
@@ -39,11 +48,19 @@ class SearchScreenViewController: UIViewController {
         listFilmByMovieName.removeAll()
         knownForPersonSearch.removeAll()
         listFilmByPersonName.removeAll()
+        APIMovie.apiMovie.getGenreList { [unowned self] (genres) in
+            if let genres = genres {
+                listGenres = genres.genres
+                getDataSearch(key: key)
+            }
+        }
+    }
+    
+    private func getDataSearch(key: String) {
         if searchType == .movieName {
             APIMovie.apiMovie.getMovieFromSearchByMovieName(with: key) { [unowned self] results in
                 if let results = results {
                     listFilmByMovieName = results.results
-                    listFilmTableView.reloadData()
                 }
                 notFoundView.isHidden = !listFilmByMovieName.isEmpty
             }
@@ -51,13 +68,8 @@ class SearchScreenViewController: UIViewController {
             APIMovie.apiMovie.getMovieFromSearchByPersonName(with: key) { [unowned self] results in
                 if let results = results {
                     knownForPersonSearch = results.results
-                    listFilmByPersonName = knownForPersonSearch.map {
-                        $0.knownFor[0]
-                    }
-                    listFilmByPersonName = listFilmByPersonName.filter({
-                        $0.title != nil
-                    })
-                    listFilmTableView.reloadData()
+                    listFilmByPersonName = knownForPersonSearch.map { $0.knownFor[0] }
+                    listFilmByPersonName = listFilmByPersonName.filter { $0.title != nil }
                 }
                 notFoundView.isHidden = !listFilmByPersonName.isEmpty
             }
@@ -169,14 +181,21 @@ extension SearchScreenViewController: UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ConstraintsSearchScreen.idMovieGenreCell,
-                                                            for: indexPath) as? SearchScreenGenreCell
+                                                            for: indexPath) as? GenreCollectionCell
         else { return UICollectionViewCell() }
         
         if searchType == .movieName {
-            cell.configGenreCell(genreId: listFilmByMovieName[collectionView.tag].genres[indexPath.row])
+            let indexGenres = listGenres.firstIndex { (element) -> Bool in
+                element.id == listFilmByMovieName[collectionView.tag].genres[indexPath.row]
+            } ?? 0
+            cell.configGenreCell(list: listGenres[indexGenres])
         } else {
-            cell.configGenreCell(genreId: listFilmByPersonName[collectionView.tag].genres[indexPath.row])
+            let indexGenres = listGenres.firstIndex { (element) -> Bool in
+                element.id == listFilmByPersonName[collectionView.tag].genres[indexPath.row]
+            } ?? 0
+            cell.configGenreCell(list: listGenres[indexGenres])
         }
+        
         return cell
     }
     
