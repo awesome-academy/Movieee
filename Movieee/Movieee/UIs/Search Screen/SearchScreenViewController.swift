@@ -32,7 +32,7 @@ class SearchScreenViewController: UIViewController {
         }
     }
     var idForMovieDetail = 0
-    var listGenres = [Genres]()
+    var listGenres = [GenresOfMovie]()
     private var storedOffsets = [Int: CGFloat]()
     
     override func viewDidLoad() {
@@ -48,7 +48,7 @@ class SearchScreenViewController: UIViewController {
         listFilmByMovieName.removeAll()
         knownForPersonSearch.removeAll()
         listFilmByPersonName.removeAll()
-        APIMovie.apiMovie.getGenreList { [unowned self] (genres) in
+        APIMovie.apiMovie.getGenreList { [unowned self] genres in
             if let genres = genres {
                 listGenres = genres.genres
                 getDataSearch(key: key)
