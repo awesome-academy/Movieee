@@ -25,14 +25,14 @@ class SearchScreenViewController: UIViewController {
             listFilmTableView.reloadData()
         }
     }
-    var knownForPersonSearch = [PersonSearchResult]() {
+    var knownForPersonSearch = [PersonSearchResult]()
+    var listFilmByPersonName = [MovieKnownForInPersonSearch]() {
         didSet {
             listFilmTableView.reloadData()
         }
     }
-    var listFilmByPersonName = [MovieKnownForInPersonSearch]()
     var idForMovieDetail = 0
-    var listGenres = [ListNameOfGenre]()
+    var listGenres = [Genres]()
     private var storedOffsets = [Int: CGFloat]()
     
     override func viewDidLoad() {

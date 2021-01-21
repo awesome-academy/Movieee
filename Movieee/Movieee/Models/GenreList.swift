@@ -1,14 +1,14 @@
 import Foundation
 
 struct GenreList: Decodable {
-    let genres: [ListNameOfGenre]
+    let genres: [Genres]
     
     private enum CodingKeys: String, CodingKey {
         case genres
     }
 }
 
-struct ListNameOfGenre: Decodable {
+struct Genres: Decodable {
     let id: Int
     let name: String
     

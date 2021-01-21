@@ -5,7 +5,7 @@ struct MovieDetail: Decodable {
     let title: String
     let poster: String
     let overview: String
-    let genres: [Genre]
+    let genres: [GenresOfMovie]
     let voteAverage: Double
     let runtime: Int
     let releaseDay: String
@@ -19,7 +19,7 @@ struct MovieDetail: Decodable {
     }
 }
 
-struct Genre: Decodable {
+struct GenresOfMovie: Decodable {
     let id: Int
     let name: String
     
