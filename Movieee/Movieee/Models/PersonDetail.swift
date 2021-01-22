@@ -5,7 +5,7 @@ struct PersonDetail: Decodable {
     let name: String
     let image: String
     let department: String
-    let gender: Int
+    let gender: Gender
     let birthday: String
     let biography: String
     
@@ -14,4 +14,16 @@ struct PersonDetail: Decodable {
         case image = "profile_path"
         case department = "known_for_department"
     }
+    
+    enum Gender: Int, Decodable {
+        case female = 1
+        case male = 2
+        var name: String {
+            switch self {
+                case .male: return "Male"
+                case .female: return "Female"
+            }
+        }
+    }
+    
 }

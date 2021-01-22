@@ -2,11 +2,6 @@ import UIKit
 private enum ConstraintsPeopleDetail {
     static let idKnownForCell = "KnownForCollectionCell"
     static let sizeOfItem = CGSize(width: 100, height: 200)
-    
-    enum Gender: String {
-        case male = "Male"
-        case female = "Female"
-    }
 }
 
 final class PeopleDetailViewController: UIViewController {
@@ -56,11 +51,7 @@ final class PeopleDetailViewController: UIViewController {
         castDepartmentLabel.text = personInfo.department
         castBirthLabel.text = personInfo.birthday
         castBiography.text = personInfo.biography
-        castGenderLabel.text = configGender(genderId: personInfo.gender)
-    }
-    
-    private func configGender(genderId: Int) -> String {
-        return genderId == 1 ? ConstraintsPeopleDetail.Gender.female.rawValue : ConstraintsPeopleDetail.Gender.male.rawValue
+        castGenderLabel.text = personInfo.gender.name
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
