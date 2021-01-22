@@ -6,8 +6,10 @@ final class HomeScreenMovieListCell: UICollectionViewCell {
     var movieId = 0
     
     func configCell(movie: ListMovieNameAndPoster) {
+        if let moviePoster = movie.poster {
+            posterImageView.getImageFromURL(imgURL: UrlAPIMovie.urlMovieImage + moviePoster)
+        }
         nameLabel.text = movie.title
-        posterImageView.getImageFromURL(imgURL: UrlAPIMovie.urlMovieImage + movie.poster)
         movieId = movie.id
     }
 }

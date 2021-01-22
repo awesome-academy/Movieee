@@ -134,8 +134,13 @@ extension MovieDetailViewController: UICollectionViewDelegate,
             //Use idGenre to pass
         } else {
             let idCast = castMovieDetail[indexPath.row].id
-            //navigation to Person Detail Screen
-            //Use idCast to pass
+            let peopleDetailStoryboard = UIStoryboard(name: IdStoryboard.peopleDetail, bundle: nil)
+            guard let peopleDetailVC = peopleDetailStoryboard.instantiateViewController(
+                    withIdentifier: IdViewController.peopleDetail)
+                    as? PeopleDetailViewController else { return }
+            
+            self.navigationController?.pushViewController(peopleDetailVC, animated: true)
+            peopleDetailVC.personId = idCast
         }
     }
     
