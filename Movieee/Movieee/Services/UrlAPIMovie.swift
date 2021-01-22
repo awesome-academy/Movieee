@@ -8,4 +8,5 @@ final class UrlAPIMovie {
     static var urlMovieImage = "https://www.themoviedb.org/t/p/w440_and_h660_face"
     static var urlPersonImage = "https://www.themoviedb.org/t/p/w276_and_h350_face"
     static var urlGenreList = "https://api.themoviedb.org/3/genre/movie/list"
+    static var urlVideoEmbedYoutube = "https://www.youtube.com/embed/"
 }

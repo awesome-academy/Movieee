@@ -1,14 +1,14 @@
 import Foundation
 
 struct MovieListByCategory: Decodable {
-    let results: [CategoryResults]
+    let results: [ListMovieNameAndPoster]
     
     private enum CodingKeys: String, CodingKey {
         case results
     }
 }
 
-struct CategoryResults: Decodable {
+struct ListMovieNameAndPoster: Decodable {
     let id: Int
     let title: String
     let poster: String
