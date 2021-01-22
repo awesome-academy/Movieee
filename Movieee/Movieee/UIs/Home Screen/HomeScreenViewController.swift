@@ -171,7 +171,12 @@ extension HomeScreenViewController: UICollectionViewDelegate,
                         didSelectItemAt indexPath: IndexPath) {
         let filmInfo = listFilmByCategory[indexPath.row]
         idForMovieDetail = filmInfo.id
-        //navigation to Movie Detail Screen
-        //Use idForMovieDetail to pass data to Movie Detail Screen
+        let movieDetailStoryboard = UIStoryboard(name: IdStoryboard.movieDetail, bundle: nil)
+        guard let movieDetailVC = movieDetailStoryboard.instantiateViewController(
+                withIdentifier: IdViewController.movieDetail)
+                as? MovieDetailViewController else { return }
+        
+        self.navigationController?.pushViewController(movieDetailVC, animated: true)
+        movieDetailVC.idFilm = idForMovieDetail
     }
 }

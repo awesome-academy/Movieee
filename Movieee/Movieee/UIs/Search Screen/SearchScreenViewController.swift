@@ -158,13 +158,18 @@ extension SearchScreenViewController: UITableViewDelegate,
     
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
+        let movieDetailStoryboard = UIStoryboard(name: IdStoryboard.movieDetail, bundle: nil)
+        guard let movieDetailVC = movieDetailStoryboard.instantiateViewController(
+                withIdentifier: IdViewController.movieDetail)
+                as? MovieDetailViewController else { return }
         if searchType == .movieName {
             idForMovieDetail = listFilmByMovieName[indexPath.row].id
         } else {
             idForMovieDetail = listFilmByPersonName[indexPath.row].id
         }
-        //Navigation to Movie Detail Screen
-        //Use idForMovieDetail to pass data
+        self.navigationController?.pushViewController(movieDetailVC, animated: true)
+        movieDetailVC.idFilm = idForMovieDetail
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
