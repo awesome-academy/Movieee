@@ -11,7 +11,7 @@ struct MovieListByCategory: Decodable {
 struct ListMovieNameAndPoster: Decodable {
     let id: Int
     let title: String
-    let poster: String
+    let poster: String?
     
     private enum CodingKeys: String, CodingKey {
         case id
