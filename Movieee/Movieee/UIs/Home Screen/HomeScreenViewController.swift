@@ -37,8 +37,8 @@ final class HomeScreenViewController: UIViewController {
         self.navigationController?.pushViewController(searchVC, animated: true)
     }
     
-    private var data = [HomeConstraints.KindOfCategory: [CategoryResults]]()
-    private var listFilmByCategory = [CategoryResults]()
+    private var data = [HomeConstraints.KindOfCategory: [ListMovieNameAndPoster]]()
+    private var listFilmByCategory = [ListMovieNameAndPoster]()
     private var storedOffsets = [Int: CGFloat]()
     private var idForMovieDetail = 0
     private let dispatchGroup = DispatchGroup()
@@ -67,7 +67,7 @@ final class HomeScreenViewController: UIViewController {
         }
     }
     
-    private func configListFilmByCategory(list: [CategoryResults]) {
+    private func configListFilmByCategory(list: [ListMovieNameAndPoster]) {
         listFilmByCategory = list
     }
     
@@ -90,7 +90,7 @@ extension HomeScreenViewController: UITableViewDelegate,
                                                  for: indexPath) as? HomeScreenCategoryCell
         else { return UITableViewCell() }
         configListFilmByCategory(
-            list: data[HomeConstraints.KindOfCategory.allCases[indexPath.section]] ?? [CategoryResults]())
+            list: data[HomeConstraints.KindOfCategory.allCases[indexPath.section]] ?? [ListMovieNameAndPoster]())
         return cell
     }
     

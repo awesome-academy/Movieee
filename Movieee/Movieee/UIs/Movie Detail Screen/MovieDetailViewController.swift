@@ -74,8 +74,12 @@ final class MovieDetailViewController: UIViewController {
     }
     
     @IBAction func viewTrailerPressed(_ sender: UIButton) {
-        //Navigation to Trailer Detail Screen
-        //Use idFilm to pass
+        let trailerDetailStoryboard = UIStoryboard(name: IdStoryboard.trailerDetail, bundle: nil)
+        guard let trailerDetailVC = trailerDetailStoryboard.instantiateViewController(
+                withIdentifier: IdViewController.trailerDetail)
+                as? TrailerDetailViewController else { return }
+        self.navigationController?.pushViewController(trailerDetailVC, animated: true)
+        trailerDetailVC.idFilm = idFilm
     }
     
     @IBAction func likeButtonPressed(_ sender: UIButton) {

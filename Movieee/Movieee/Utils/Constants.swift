@@ -10,12 +10,14 @@ enum IdViewController {
     static let category = "CategoryViewController"
     static let search = "SearchViewController"
     static let movieDetail = "MovieDetailViewController"
+    static let trailerDetail = "TrailerDetailViewController"
 }
 
 enum IdStoryboard {
     static let home = "HomeScreen"
     static let search = "SearchScreen"
     static let movieDetail = "MovieDetailScreen"
+    static let trailerDetail = "TrailerDetailScreen"
 }
 
 enum ColorName {
