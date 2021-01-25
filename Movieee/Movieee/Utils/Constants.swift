@@ -12,6 +12,7 @@ enum IdViewController {
     static let movieDetail = "MovieDetailViewController"
     static let trailerDetail = "TrailerDetailViewController"
     static let peopleDetail = "PeopleDetailViewController"
+    static let genreCate = "GenreCateViewController"
 }
 
 enum IdStoryboard {
@@ -20,6 +21,7 @@ enum IdStoryboard {
     static let movieDetail = "MovieDetailScreen"
     static let trailerDetail = "TrailerDetailScreen"
     static let peopleDetail = "PeopleDetailScreen"
+    static let genreCate = "GenreCateScreen"
 }
 
 enum ColorName {

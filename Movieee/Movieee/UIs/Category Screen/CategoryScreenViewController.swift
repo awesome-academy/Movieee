@@ -28,8 +28,16 @@ final class CategoryScreenViewController: UIViewController {
         categoryTableView.delegate = self
         categoryTableView.dataSource = self
     }
+    
+    @IBAction func searchButtonPressed(_ sender: UIButton) {
+        let searchStoryboard = UIStoryboard(name: IdStoryboard.search, bundle: nil)
+        guard let searchVC = searchStoryboard.instantiateViewController(
+                withIdentifier: IdViewController.search)
+                as? SearchScreenViewController else { return }
+        self.navigationController?.pushViewController(searchVC, animated: true)
+    }
 }
-
+//MARK: - TableView
 extension CategoryScreenViewController: UITableViewDelegate,
                                         UITableViewDataSource {
     func tableView(_ tableView: UITableView,
@@ -52,7 +60,15 @@ extension CategoryScreenViewController: UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let keyToPass = CategoryConstraints.KindOfCategoryURL.allCases[indexPath.row].rawValue
-        //use keyNeedToPass to pass data to Category Detail Screen
-        //navigation to Category Detail Screen (chưa tạo Screen)
+        let categoryName = CategoryConstraints.KindOfCategoryURL.allCases[indexPath.row].labelName
+        let genreCateStoryboard = UIStoryboard(name: IdStoryboard.genreCate, bundle: nil)
+        guard let genreCateVC = genreCateStoryboard.instantiateViewController(
+                withIdentifier: IdViewController.genreCate)
+                as? GenreCateScreenViewController else { return }
+    
+        self.navigationController?.pushViewController(genreCateVC, animated: true)
+        genreCateVC.categoryType = keyToPass
+        genreCateVC.categoryName = categoryName
+        genreCateVC.viewType = .category
     }
 }
