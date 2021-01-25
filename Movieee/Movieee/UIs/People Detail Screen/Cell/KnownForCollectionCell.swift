@@ -2,7 +2,7 @@ import UIKit
 final class KnownForCollectionCell: UICollectionViewCell {
     @IBOutlet private weak var movieImageView: UIImageView!
     @IBOutlet private weak var movieNameLabel: UILabel!
-    var id = 0
+    private var id = 0
     
     func configCell(movieList: ListMovieNameAndPoster) {
         if let moviePoster = movieList.poster {

@@ -2,7 +2,7 @@ import UIKit
 final class CastCollectionCell: UICollectionViewCell {
     @IBOutlet private weak var castImageView: UIImageView!
     @IBOutlet private weak var castNameLabel: UILabel!
-    var castId = 0
+    private var castId = 0
     
     func configCastCell(castList: CastInMovieDetail) {
         if let castImage = castList.image {

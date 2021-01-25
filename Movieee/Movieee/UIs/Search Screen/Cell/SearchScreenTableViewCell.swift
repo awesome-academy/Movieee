@@ -7,9 +7,9 @@ class SearchScreenTableViewCell: UITableViewCell {
     @IBOutlet private weak var genreCollectionView: UICollectionView!
     @IBOutlet private weak var posterImageView: UIImageView!
     @IBOutlet private weak var filmNameLabel: UILabel!
-    var filmId = 0
-    var genreList = [Int]()
-    var voteAverage = 0.0
+    private var filmId = 0
+    private var genreList = [Int]()
+    private var voteAverage = 0.0
     
     func configCellByMovie(movieSearch: MovieSearchResults) {
         filmNameLabel.text = movieSearch.title

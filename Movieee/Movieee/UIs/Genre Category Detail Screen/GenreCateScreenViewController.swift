@@ -1,4 +1,5 @@
 import UIKit
+
 private enum GenreCateConstraints {
     static let sizeOfItem = CGSize(width: 175, height: 300)
     static let idGenreCateCollectionCell = "GenreCateCollectionCell"
@@ -7,6 +8,9 @@ private enum GenreCateConstraints {
 enum ViewType {
     case genre
     case category
+    func configTitle(genre: String, category: String) -> String {
+        return self == .genre ? genre : category
+    }
 }
 
 final class GenreCateScreenViewController: UIViewController {
@@ -15,10 +19,9 @@ final class GenreCateScreenViewController: UIViewController {
     
     private let dispatchGroup = DispatchGroup()
     var viewType = ViewType.genre
+    var genreInfo: GenresOfMovie?
     var categoryType = ""
     var categoryName = ""
-    var genreId = 0
-    var genreName = ""
     
     private var listMovie = [ListMovieNameAndPoster]() {
         didSet {
@@ -31,11 +34,14 @@ final class GenreCateScreenViewController: UIViewController {
         genreCateCollectionView.delegate = self
         genreCateCollectionView.dataSource = self
         
-        configGenreCate(with: genreId, with: categoryType)
-        titleLabel.text = configTitle(genre: genreName, category: categoryName)
+        configGenreCate(with: genreInfo?.id ?? 0,
+                        with: categoryType)
+        titleLabel.text = viewType.configTitle(genre: genreInfo?.name.uppercased() ?? "",
+                                               category: categoryName)
     }
     
-    private func configGenreCate(with id: Int, with category: String) {
+    private func configGenreCate(with id: Int,
+                                 with category: String) {
         dispatchGroup.enter()
         if viewType == .genre {
             APIMovie.apiMovie.getMovieFromGenre(from: String(id)) { [unowned self] result in
@@ -51,10 +57,6 @@ final class GenreCateScreenViewController: UIViewController {
             }
         }
         dispatchGroup.leave()
-    }
-    
-    private func configTitle(genre: String, category: String) -> String {
-        return viewType == .genre ? genre : category
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
