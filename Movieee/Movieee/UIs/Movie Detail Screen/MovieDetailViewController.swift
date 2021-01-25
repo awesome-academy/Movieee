@@ -129,9 +129,15 @@ extension MovieDetailViewController: UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == genreCollection {
-            let idGenre = movieDetail?.genres[indexPath.row].id
-            //navigation to Genre Detail Screen
-            //Use idGenre to pass
+            let genreInfo = movieDetail?.genres[indexPath.row]
+            let genreCateStoryboard = UIStoryboard(name: IdStoryboard.genreCate, bundle: nil)
+            guard let genreCateVC = genreCateStoryboard.instantiateViewController(
+                    withIdentifier: IdViewController.genreCate)
+                    as? GenreCateScreenViewController else { return }
+            
+            self.navigationController?.pushViewController(genreCateVC, animated: true)
+            genreCateVC.genreInfo = genreInfo
+            genreCateVC.viewType = .genre
         } else {
             let idCast = castMovieDetail[indexPath.row].id
             let peopleDetailStoryboard = UIStoryboard(name: IdStoryboard.peopleDetail, bundle: nil)

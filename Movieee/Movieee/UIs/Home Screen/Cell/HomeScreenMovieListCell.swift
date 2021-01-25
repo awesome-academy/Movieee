@@ -3,7 +3,7 @@ final class HomeScreenMovieListCell: UICollectionViewCell {
     
     @IBOutlet private weak var posterImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
-    var movieId = 0
+    private var movieId = 0
     
     func configCell(movie: ListMovieNameAndPoster) {
         if let moviePoster = movie.poster {
