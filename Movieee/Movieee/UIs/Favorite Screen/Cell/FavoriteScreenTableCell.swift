@@ -28,5 +28,4 @@ final class FavoriteScreenTableCell: UITableViewCell {
             ratingStars[index].tintColor = index < numStar ? .systemYellow : .lightGray
         }
     }
-    
 }

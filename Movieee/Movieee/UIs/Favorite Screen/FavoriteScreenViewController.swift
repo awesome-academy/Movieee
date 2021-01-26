@@ -11,7 +11,6 @@ private enum ConstraintsFavoriteScreen {
 }
 
 final class FavoriteScreenViewController: UIViewController {
-    
     @IBOutlet private weak var listFilmTableView: UITableView!
     private let appDelegate = UIApplication.shared.delegate as? AppDelegate
     private var item = [FavoriteModel]()
@@ -80,7 +79,6 @@ final class FavoriteScreenViewController: UIViewController {
                 as? SearchScreenViewController else { return }
         self.navigationController?.pushViewController(searchVC, animated: true)
     }
-        
 }
 //MARK: - ListFilm TableView
 extension FavoriteScreenViewController: UITableViewDelegate,

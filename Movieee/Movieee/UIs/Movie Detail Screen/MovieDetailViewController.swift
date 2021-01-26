@@ -8,7 +8,7 @@ private enum ConstraintsMovieDetail {
 }
 
 final class MovieDetailViewController: UIViewController {
-    @IBOutlet weak var loveButtonOutlet: UIButton!
+    @IBOutlet private weak var loveButtonOutlet: UIButton!
     @IBOutlet private weak var posterImage: UIImageView!
     @IBOutlet private weak var filmNameLabel: UILabel!
     @IBOutlet private weak var filmDuration: UILabel!
@@ -21,7 +21,7 @@ final class MovieDetailViewController: UIViewController {
     
     var idFilm = 0
     private var items = [FavoriteModel]()
-    private var movieHasFavorited = true
+    private var isMovieHasFavorited = false
     private let dispatchGroup = DispatchGroup()
     private let appDelegate = UIApplication.shared.delegate as? AppDelegate
     
@@ -43,7 +43,7 @@ final class MovieDetailViewController: UIViewController {
         genreCollection.dataSource = self
         castCollection.dataSource = self
         configMovieDetail(with: idFilm)
-        movieHasFavorited = checkItem()
+        isMovieHasFavorited = checkItem()
     }
     
     private func configMovieDetail(with id: Int) {
@@ -93,7 +93,7 @@ final class MovieDetailViewController: UIViewController {
         guard let movieInfo = movieDetail
         else { return }
         if let context = appDelegate?.persistentContainer.viewContext {
-            if movieHasFavorited  {
+            if isMovieHasFavorited  {
                 let newFavoriteMovie = FavoriteModel(context: context)
                 newFavoriteMovie.id = Int32(movieInfo.id)
                 newFavoriteMovie.poster = movieInfo.poster
@@ -101,11 +101,11 @@ final class MovieDetailViewController: UIViewController {
                 newFavoriteMovie.voteAverage = movieInfo.voteAverage
                 newFavoriteMovie.overview = movieInfo.overview
                 sender.backgroundColor = .systemPink
-                movieHasFavorited = false
+                isMovieHasFavorited = false
             } else {
                 deleteItem()
-                sender.backgroundColor = .clear
-                movieHasFavorited = true
+                sender.backgroundColor = UIColor(named: ColorName.loveBackgroundColorName)
+                isMovieHasFavorited = true
             }
         }
         saveItem()
@@ -122,7 +122,7 @@ final class MovieDetailViewController: UIViewController {
             print("Error fetching data \(error)")
         }
         if items.isEmpty {
-            loveButtonOutlet.backgroundColor = .clear
+            loveButtonOutlet.backgroundColor = UIColor(named: ColorName.loveBackgroundColorName)
             return true
         } else {
             loveButtonOutlet.backgroundColor = .systemPink
@@ -217,5 +217,4 @@ extension MovieDetailViewController: UICollectionViewDelegate,
             peopleDetailVC.personId = idCast
         }
     }
-    
 }
