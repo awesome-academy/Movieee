@@ -351,13 +351,14 @@
                         <outlet property="filmNameLabel" destination="dJk-Qf-Xdy" id="0g9-eK-htk"/>
                         <outlet property="filmReleaseDay" destination="d7n-Lb-GG5" id="4vL-Yk-CqX"/>
                         <outlet property="genreCollection" destination="dWj-NW-GV9" id="iWW-ty-9Vw"/>
+                        <outlet property="loveButtonOutlet" destination="S9V-49-mDH" id="xQx-LJ-Div"/>
                         <outlet property="posterImage" destination="VL9-ya-uc4" id="kjL-4B-Cwk"/>
                         <outlet property="voteRate" destination="jUS-uH-NuW" id="upA-uz-BG4"/>
-                        <outletCollection property="ratingStars" destination="eLC-Ag-2F4" collectionClass="NSMutableArray" id="oNt-Ny-zoZ"/>
-                        <outletCollection property="ratingStars" destination="tVg-Ms-e6D" collectionClass="NSMutableArray" id="19b-mZ-2qD"/>
-                        <outletCollection property="ratingStars" destination="vhu-x0-C4S" collectionClass="NSMutableArray" id="gg9-hs-47t"/>
-                        <outletCollection property="ratingStars" destination="YrB-gZ-wOD" collectionClass="NSMutableArray" id="Gg2-jL-Lte"/>
-                        <outletCollection property="ratingStars" destination="oSj-CZ-zc3" collectionClass="NSMutableArray" id="PJv-Pl-Ohq"/>
+                        <outletCollection property="ratingStars" destination="vhu-x0-C4S" collectionClass="NSMutableArray" id="xuE-3Z-2ay"/>
+                        <outletCollection property="ratingStars" destination="eLC-Ag-2F4" collectionClass="NSMutableArray" id="w4s-jF-LVa"/>
+                        <outletCollection property="ratingStars" destination="tVg-Ms-e6D" collectionClass="NSMutableArray" id="iBh-Ta-TNe"/>
+                        <outletCollection property="ratingStars" destination="YrB-gZ-wOD" collectionClass="NSMutableArray" id="TfG-rc-xo3"/>
+                        <outletCollection property="ratingStars" destination="oSj-CZ-zc3" collectionClass="NSMutableArray" id="woa-fN-wEP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="paT-Bw-h7h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

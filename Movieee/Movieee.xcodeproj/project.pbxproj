@@ -15,6 +15,12 @@
 		E40EDA8225A3F69E00AD34A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E40EDA8025A3F69E00AD34A1 /* Main.storyboard */; };
 		E40EDA8425A3F6A000AD34A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E40EDA8325A3F6A000AD34A1 /* Assets.xcassets */; };
 		E40EDA8725A3F6A000AD34A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E40EDA8525A3F6A000AD34A1 /* LaunchScreen.storyboard */; };
+		E40EFDC425BFA08900300B98 /* CoredataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E40EFDC225BFA08900300B98 /* CoredataModel.xcdatamodeld */; };
+		E40EFDC825BFA0EE00300B98 /* FavoriteModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EFDC625BFA0EE00300B98 /* FavoriteModel+CoreDataClass.swift */; };
+		E40EFDC925BFA0EE00300B98 /* FavoriteModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EFDC725BFA0EE00300B98 /* FavoriteModel+CoreDataProperties.swift */; };
+		E40EFDCC25BFA15200300B98 /* FavoriteScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EFDCB25BFA15200300B98 /* FavoriteScreenViewController.swift */; };
+		E40EFDD025BFA18900300B98 /* FavoriteScreenTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EFDCF25BFA18900300B98 /* FavoriteScreenTableCell.swift */; };
+		E40EFDD525BFA6AD00300B98 /* Favorite Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E40EFDD425BFA6AD00300B98 /* Favorite Screen.storyboard */; };
 		E4131B0825AD5CA2007C1071 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4131B0725AD5CA2007C1071 /* UIImageView+.swift */; };
 		E42D38B425A7ED450083616B /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42D38B325A7ED450083616B /* HomeScreenViewController.swift */; };
 		E42D38BF25A802050083616B /* WelcomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E42D38BE25A802050083616B /* WelcomeScreen.storyboard */; };
@@ -66,6 +72,12 @@
 		E40EDA8325A3F6A000AD34A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E40EDA8625A3F6A000AD34A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E40EDA8825A3F6A000AD34A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E40EFDC325BFA08900300B98 /* CoredataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoredataModel.xcdatamodel; sourceTree = "<group>"; };
+		E40EFDC625BFA0EE00300B98 /* FavoriteModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E40EFDC725BFA0EE00300B98 /* FavoriteModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E40EFDCB25BFA15200300B98 /* FavoriteScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteScreenViewController.swift; sourceTree = "<group>"; };
+		E40EFDCF25BFA18900300B98 /* FavoriteScreenTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteScreenTableCell.swift; sourceTree = "<group>"; };
+		E40EFDD425BFA6AD00300B98 /* Favorite Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Favorite Screen.storyboard"; sourceTree = "<group>"; };
 		E4131B0725AD5CA2007C1071 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		E42D38B325A7ED450083616B /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		E42D38BE25A802050083616B /* WelcomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WelcomeScreen.storyboard; sourceTree = "<group>"; };
@@ -163,6 +175,7 @@
 				E4131B0A25AD5CAB007C1071 /* Extensions */,
 				E40EDA8325A3F6A000AD34A1 /* Assets.xcassets */,
 				E40EDA8825A3F6A000AD34A1 /* Info.plist */,
+				E40EFDC225BFA08900300B98 /* CoredataModel.xcdatamodeld */,
 			);
 			path = Movieee;
 			sourceTree = "<group>";
@@ -170,6 +183,7 @@
 		E40EDA9425A40E5E00AD34A1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E40EFDDA25BFAAFF00300B98 /* Core Data */,
 				E470C82525A5A2460096D9B7 /* MovieDetail.swift */,
 				E470C82125A5A2460096D9B7 /* MovieDetailCredits.swift */,
 				E470C82425A5A2460096D9B7 /* MovieListByCategory.swift */,
@@ -197,8 +211,36 @@
 				E4E2C08A25BA816100EFCA8C /* Trailer Screen */,
 				E48DA3AB25BAAFEB007EFE61 /* People Detail Screen */,
 				E463BC3D25BE4E3300CEADE5 /* Genre Category Detail Screen */,
+				E40EFDBA25BF9FFC00300B98 /* Favorite Screen */,
 			);
 			path = UIs;
+			sourceTree = "<group>";
+		};
+		E40EFDBA25BF9FFC00300B98 /* Favorite Screen */ = {
+			isa = PBXGroup;
+			children = (
+				E40EFDCE25BFA16800300B98 /* Cell */,
+				E40EFDCB25BFA15200300B98 /* FavoriteScreenViewController.swift */,
+				E40EFDD425BFA6AD00300B98 /* Favorite Screen.storyboard */,
+			);
+			path = "Favorite Screen";
+			sourceTree = "<group>";
+		};
+		E40EFDCE25BFA16800300B98 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E40EFDCF25BFA18900300B98 /* FavoriteScreenTableCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E40EFDDA25BFAAFF00300B98 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				E40EFDC625BFA0EE00300B98 /* FavoriteModel+CoreDataClass.swift */,
+				E40EFDC725BFA0EE00300B98 /* FavoriteModel+CoreDataProperties.swift */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 		E4131B0A25AD5CAB007C1071 /* Extensions */ = {
@@ -413,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E405006A25B149FC00D5C50D /* CategoryScreen.storyboard in Resources */,
+				E40EFDD525BFA6AD00300B98 /* Favorite Screen.storyboard in Resources */,
 				E4E56FAF25B8255E00C464D2 /* SearchScreen.storyboard in Resources */,
 				E4E2C08C25BA819400EFCA8C /* TrailerDetailScreen.storyboard in Resources */,
 				E40EDA8725A3F6A000AD34A1 /* LaunchScreen.storyboard in Resources */,
@@ -441,13 +484,17 @@
 				E48DA3B025BAB042007EFE61 /* PeopleDetailViewController.swift in Sources */,
 				E4E56FD625B9392300C464D2 /* MovieDetailViewController.swift in Sources */,
 				E470C82B25A5A2460096D9B7 /* PersonDetail.swift in Sources */,
+				E40EFDD025BFA18900300B98 /* FavoriteScreenTableCell.swift in Sources */,
 				E4131B0825AD5CA2007C1071 /* UIImageView+.swift in Sources */,
+				E40EFDC925BFA0EE00300B98 /* FavoriteModel+CoreDataProperties.swift in Sources */,
+				E40EFDC825BFA0EE00300B98 /* FavoriteModel+CoreDataClass.swift in Sources */,
 				E470C82D25A5A2460096D9B7 /* MovieDetail.swift in Sources */,
 				E42D38B425A7ED450083616B /* HomeScreenViewController.swift in Sources */,
 				E43C9C9825AB08FB00E2D424 /* HomeScreenMovieListCell.swift in Sources */,
 				E405006D25B14A6400D5C50D /* CategoryScreenViewController.swift in Sources */,
 				E470C85125A6DADF0096D9B7 /* WelcomeScreenViewController.swift in Sources */,
 				E46FF36F25AFF34D0082C51E /* UIView+.swift in Sources */,
+				E40EFDCC25BFA15200300B98 /* FavoriteScreenViewController.swift in Sources */,
 				E42D38D425A8105C0083616B /* HomeScreenCategoryCell.swift in Sources */,
 				E470C82725A5A2460096D9B7 /* PersonDetailKnownFor.swift in Sources */,
 				E470C83625A5A2690096D9B7 /* UrlAPIMovie.swift in Sources */,
@@ -459,6 +506,7 @@
 				E470C82E25A5A2460096D9B7 /* MovieSearchByMovieName.swift in Sources */,
 				E470C82825A5A2460096D9B7 /* MovieListByGenre.swift in Sources */,
 				E48DA3B425BAB088007EFE61 /* KnownForCollectionCell.swift in Sources */,
+				E40EFDC425BFA08900300B98 /* CoredataModel.xcdatamodeld in Sources */,
 				E4E56FCD25B909B100C464D2 /* GenreList.swift in Sources */,
 				E4E2C08F25BA81C700EFCA8C /* TrailerDetailViewController.swift in Sources */,
 				E470C84125A5A58A0096D9B7 /* MovieSearchByPersonName.swift in Sources */,
@@ -671,6 +719,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E40EFDC225BFA08900300B98 /* CoredataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E40EFDC325BFA08900300B98 /* CoredataModel.xcdatamodel */,
+			);
+			currentVersion = E40EFDC325BFA08900300B98 /* CoredataModel.xcdatamodel */;
+			path = CoredataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E40EDA6F25A3F69E00AD34A1 /* Project object */;
 }
