@@ -26,6 +26,7 @@ enum IdStoryboard {
 
 enum ColorName {
     static let backgroundColorName = "BackgroundColor"
+    static let itemForegroundColorName = "ItemForegroundColor"
 }
 
 enum FontName {

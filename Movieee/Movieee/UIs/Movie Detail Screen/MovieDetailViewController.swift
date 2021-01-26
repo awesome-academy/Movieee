@@ -1,4 +1,6 @@
 import UIKit
+import CoreData
+
 private enum ConstraintsMovieDetail {
     static let idGenreCell = "GenreCollectionCell"
     static let idCastCell = "CastCollectionCell"
@@ -6,6 +8,7 @@ private enum ConstraintsMovieDetail {
 }
 
 final class MovieDetailViewController: UIViewController {
+    @IBOutlet weak var loveButtonOutlet: UIButton!
     @IBOutlet private weak var posterImage: UIImageView!
     @IBOutlet private weak var filmNameLabel: UILabel!
     @IBOutlet private weak var filmDuration: UILabel!
@@ -15,7 +18,12 @@ final class MovieDetailViewController: UIViewController {
     @IBOutlet private weak var genreCollection: UICollectionView!
     @IBOutlet private weak var castCollection: UICollectionView!
     @IBOutlet private var ratingStars: [UIImageView]!
+    
     var idFilm = 0
+    private var items = [FavoriteModel]()
+    private var movieHasFavorited = true
+    private let dispatchGroup = DispatchGroup()
+    private let appDelegate = UIApplication.shared.delegate as? AppDelegate
     
     private var movieDetail: MovieDetail? {
         didSet {
@@ -28,8 +36,6 @@ final class MovieDetailViewController: UIViewController {
         }
     }
     
-    private let dispatchGroup = DispatchGroup()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         genreCollection.delegate = self
@@ -37,6 +43,7 @@ final class MovieDetailViewController: UIViewController {
         genreCollection.dataSource = self
         castCollection.dataSource = self
         configMovieDetail(with: idFilm)
+        movieHasFavorited = checkItem()
     }
     
     private func configMovieDetail(with id: Int) {
@@ -83,14 +90,75 @@ final class MovieDetailViewController: UIViewController {
     }
     
     @IBAction func likeButtonPressed(_ sender: UIButton) {
-        
+        guard let movieInfo = movieDetail
+        else { return }
+        if let context = appDelegate?.persistentContainer.viewContext {
+            if movieHasFavorited  {
+                let newFavoriteMovie = FavoriteModel(context: context)
+                newFavoriteMovie.id = Int32(movieInfo.id)
+                newFavoriteMovie.poster = movieInfo.poster
+                newFavoriteMovie.title = movieInfo.title
+                newFavoriteMovie.voteAverage = movieInfo.voteAverage
+                newFavoriteMovie.overview = movieInfo.overview
+                sender.backgroundColor = .systemPink
+                movieHasFavorited = false
+            } else {
+                deleteItem()
+                sender.backgroundColor = .clear
+                movieHasFavorited = true
+            }
+        }
+        saveItem()
+    }
+    
+    private func checkItem() -> Bool {
+        let request: NSFetchRequest<FavoriteModel> = FavoriteModel.fetchRequest()
+        request.predicate = NSPredicate(format: "id == %i", idFilm)
+        request.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+        let context = appDelegate?.persistentContainer.viewContext
+        do {
+            items = try context?.fetch(request) ?? [FavoriteModel]()
+        } catch {
+            print("Error fetching data \(error)")
+        }
+        if items.isEmpty {
+            loveButtonOutlet.backgroundColor = .clear
+            return true
+        } else {
+            loveButtonOutlet.backgroundColor = .systemPink
+            return false
+        }
+    }
+    
+    private func saveItem() {
+        let context = appDelegate?.persistentContainer.viewContext
+        do {
+            try context?.save()
+        } catch {
+            print("Error saving context \(error)")
+        }
+    }
+    
+    private func deleteItem() {
+        let request: NSFetchRequest<FavoriteModel> = FavoriteModel.fetchRequest()
+        request.predicate = NSPredicate(format: "id == \(idFilm)")
+        let context = appDelegate?.persistentContainer.viewContext
+        do {
+            items = try context?.fetch(request) ?? [FavoriteModel]()
+        } catch {
+            print("Error fetching data \(error)")
+        }
+        for item in items {
+            context?.delete(item)
+        }
+        saveItem()
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
 }
-
+//MARK: - Genre, Cast CollectionView
 extension MovieDetailViewController: UICollectionViewDelegate,
                                      UICollectionViewDataSource,
                                      UICollectionViewDelegateFlowLayout {

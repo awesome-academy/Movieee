@@ -16,41 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="PLW-ag-oMk" userLabel="TitleView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOVIEEE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjB-jm-V8K">
-                                        <rect key="frame" x="16" y="62" width="120" height="36"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EkX-Q6-eoJ">
-                                        <rect key="frame" x="363" y="57" width="43" height="44"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" backgroundImage="magnifyingglass" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="searchButtonPressed:" destination="uHD-O3-X3a" eventType="touchUpInside" id="w4V-Ac-dkk"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.090196078431372548" green="0.023529411764705882" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="kjB-jm-V8K" secondAttribute="bottom" constant="12" id="7fc-Hw-abO"/>
-                                    <constraint firstItem="EkX-Q6-eoJ" firstAttribute="top" secondItem="PLW-ag-oMk" secondAttribute="top" constant="56" id="9T8-EJ-rnD"/>
-                                    <constraint firstAttribute="bottom" secondItem="EkX-Q6-eoJ" secondAttribute="bottom" constant="8" id="Bgl-Nr-PIc"/>
-                                    <constraint firstItem="kjB-jm-V8K" firstAttribute="top" secondItem="PLW-ag-oMk" secondAttribute="top" constant="62" id="PQv-yh-gaB"/>
-                                    <constraint firstItem="EkX-Q6-eoJ" firstAttribute="leading" secondItem="kjB-jm-V8K" secondAttribute="trailing" constant="227" id="YeG-sE-eb7"/>
-                                    <constraint firstAttribute="trailing" secondItem="kjB-jm-V8K" secondAttribute="trailing" constant="278" id="bmx-pM-ooJ"/>
-                                    <constraint firstItem="kjB-jm-V8K" firstAttribute="leading" secondItem="PLW-ag-oMk" secondAttribute="leading" constant="16" id="twj-hl-OiH"/>
-                                    <constraint firstAttribute="trailing" secondItem="EkX-Q6-eoJ" secondAttribute="trailing" constant="8" id="wt0-aV-LhY"/>
-                                </constraints>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOVIEEE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjB-jm-V8K">
+                                <rect key="frame" x="16" y="62" width="118.5" height="31"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wSM-tR-5Yz">
-                                <rect key="frame" x="0.0" y="118" width="414" height="695"/>
+                                <rect key="frame" x="0.0" y="113" width="414" height="700"/>
                                 <color key="backgroundColor" red="0.090196078430000007" green="0.023529411760000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.090881653130000004" green="0.026079839099999998" blue="0.1677393019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -142,14 +115,33 @@
                                     <outlet property="delegate" destination="uHD-O3-X3a" id="kPz-07-THl"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EkX-Q6-eoJ">
+                                <rect key="frame" x="362" y="57" width="44" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="Lwm-GR-5ZE"/>
+                                    <constraint firstAttribute="height" constant="45" id="W0N-Nm-WrV"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="magnifyingglass" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButtonPressed:" destination="uHD-O3-X3a" eventType="touchUpInside" id="w4V-Ac-dkk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="htc-nt-7IQ"/>
                         <color key="backgroundColor" red="0.090852729980000005" green="0.0303259138" blue="0.16369917989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wSM-tR-5Yz" firstAttribute="top" secondItem="PLW-ag-oMk" secondAttribute="bottom" constant="8" id="1Rd-8i-zTO"/>
                             <constraint firstItem="wSM-tR-5Yz" firstAttribute="leading" secondItem="htc-nt-7IQ" secondAttribute="leading" id="22c-me-Mch"/>
+                            <constraint firstItem="EkX-Q6-eoJ" firstAttribute="top" secondItem="gUQ-9B-2Yo" secondAttribute="top" constant="56" id="IEL-yb-04Y"/>
+                            <constraint firstItem="wSM-tR-5Yz" firstAttribute="top" secondItem="kjB-jm-V8K" secondAttribute="bottom" constant="20" id="Mbw-5B-kYx"/>
+                            <constraint firstItem="kjB-jm-V8K" firstAttribute="top" secondItem="gUQ-9B-2Yo" secondAttribute="top" constant="62" id="S6U-TW-7x9"/>
+                            <constraint firstItem="wSM-tR-5Yz" firstAttribute="bottom" secondItem="htc-nt-7IQ" secondAttribute="bottom" id="YRB-vO-yoB"/>
+                            <constraint firstItem="htc-nt-7IQ" firstAttribute="trailing" secondItem="EkX-Q6-eoJ" secondAttribute="trailing" constant="8" id="hGw-PA-U8N"/>
                             <constraint firstItem="wSM-tR-5Yz" firstAttribute="trailing" secondItem="htc-nt-7IQ" secondAttribute="trailing" id="ln9-65-bua"/>
                             <constraint firstItem="wSM-tR-5Yz" firstAttribute="bottom" secondItem="htc-nt-7IQ" secondAttribute="bottom" id="sE1-gb-Rhh"/>
+                            <constraint firstItem="kjB-jm-V8K" firstAttribute="leading" secondItem="htc-nt-7IQ" secondAttribute="leading" constant="16" id="uiQ-Kw-iu0"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

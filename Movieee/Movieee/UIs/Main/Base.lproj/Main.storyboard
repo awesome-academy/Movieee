@@ -87,6 +87,9 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
+                    <connections>
+                        <segue destination="3TL-MA-YAI" kind="relationship" relationship="rootViewController" id="6xp-Gb-7Vi"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LeF-aw-yE9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,6 +114,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L3R-yY-tC6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-62" y="1191"/>
+        </scene>
+        <!--Favorite Screen-->
+        <scene sceneID="gmY-nW-Kt3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Favorite Screen" id="3TL-MA-YAI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Jfn-FW-JZb"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WmA-Xs-vWV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="775" y="1191"/>
         </scene>
     </scenes>
     <resources>
