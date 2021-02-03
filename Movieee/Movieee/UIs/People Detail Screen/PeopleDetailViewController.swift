@@ -31,15 +31,15 @@ final class PeopleDetailViewController: UIViewController {
     
     private func configPeopleDetail(with id: Int) {
         dispatchGroup.enter()
-        APIMovie.apiMovie.getPersonDetail(personId: String(id)) { [unowned self] result in
+        APIMovie.apiMovie.getPersonDetail(personId: String(id)) { [weak self] result in
             if let result = result {
-                personDetail = result
-                configInfo(personInfo: result)
+                self?.personDetail = result
+                self?.configInfo(personInfo: result)
             }
         }
-        APIMovie.apiMovie.getPersonDetailKnownFor(personId: String(id)) { [unowned self] result in
+        APIMovie.apiMovie.getPersonDetailKnownFor(personId: String(id)) { [weak self] result in
             if let result = result {
-                movieList = result.cast
+                self?.movieList = result.cast
             }
         }
         dispatchGroup.leave()

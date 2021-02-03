@@ -89,3 +89,6 @@ fastlane/test_output
 
 iOSInjectionProject/
 Movieee/Movieee/Utils/APIKeyMovie.swift
+Movieee/.DS_Store
+Movieee/Podfile.lock
+Movieee/Pods/

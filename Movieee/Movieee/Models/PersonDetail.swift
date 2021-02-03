@@ -25,5 +25,17 @@ struct PersonDetail: Decodable {
             }
         }
     }
-    
+}
+
+extension PersonDetail: Equatable {
+    static func == (lhs: PersonDetail,
+                    rhs: PersonDetail) -> Bool {
+        return lhs.id == rhs.id
+            && lhs.biography == rhs.biography
+            && lhs.birthday == rhs.birthday
+            && lhs.department == rhs.department
+            && lhs.gender == rhs.gender
+            && lhs.name == rhs.name
+            && lhs.image == rhs.image
+    }
 }

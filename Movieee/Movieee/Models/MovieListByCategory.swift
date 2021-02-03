@@ -19,3 +19,12 @@ struct ListMovieNameAndPoster: Decodable {
         case poster = "poster_path"
     }
 }
+
+extension ListMovieNameAndPoster: Equatable {
+    static func == (lhs: ListMovieNameAndPoster,
+                    rhs: ListMovieNameAndPoster) -> Bool {
+        return lhs.id == rhs.id
+            && lhs.poster == rhs.poster
+            && lhs.title == rhs.title
+    }
+}
