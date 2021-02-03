@@ -212,7 +212,6 @@ extension MovieDetailViewController: UICollectionViewDelegate,
             guard let peopleDetailVC = peopleDetailStoryboard.instantiateViewController(
                     withIdentifier: IdViewController.peopleDetail)
                     as? PeopleDetailViewController else { return }
-            
             self.navigationController?.pushViewController(peopleDetailVC, animated: true)
             peopleDetailVC.personId = idCast
         }
