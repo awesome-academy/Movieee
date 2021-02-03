@@ -43,8 +43,9 @@ class MovieeeTests: QuickSpec {
             }
             
             context("biography label") {
-                it("content of label") {
-                    expect(mirror.castBiography?.text).toEventually(equal("Gal Gadot (born: April 30, 1985) is an Israeli actress and model. She was born in Rosh Ha'ayin, Israel, to an Ashkenazi Jewish family (from Poland, Austria, Germany, and Czechoslovakia). She served in the IDF for two years, and won the Miss Israel title in 2004.\n\nGal began modeling in the late 2000s, and made her film debut in the fourth film of the Fast and Furious franchise, Fast & Furious (2009), as Gisele, an associate of the film's lead villain. Her role was expanded in the sequels Fast Five (2011) and Fast & Furious 6 (2013), in which her character was romantically linked to Han Seoul-Oh (Sung Kang). In the films, Gal performed her own stunts. She also appeared in the 2010 films Date Night (2010) and Knight and Day (2010). In early December 2013, Gal was cast as Wonder Woman in the DC Extended Universe.\n\nGal is a motorcycle enthusiast, and owns a black 2006 Ducati Monster-S2R. She has been married to Yaron Versano since September 28, 2008. They have one child."))
+                it("content of label") { [weak self] in
+                    let resultInJson = self?.loadPersonDetailJson(fileName: "response")
+                    expect(mirror.castBiography?.text).toEventually(equal(resultInJson?.biography))
                 }
             }
             
